@@ -139,6 +139,10 @@ map= esegue qualcosa per ogni elemento e restituisce un array nuovo con i risult
 const nomiCompleti = utenti.map(({ nome, cognome }) => `${nome} ${cognome}`);
 console.log(nomiCompleti);
 console.log(`**************************************************`);
+
+
+
+
 /* ESERCIZIO 9 — map a oggetti
    Usa map per creare utentiPlus: array di oggetti dove ogni utente ha tutte
    le properties originali + una nuova property "descrizione" con valore
@@ -147,10 +151,18 @@ console.log(`**************************************************`);
    Stampa il primo elemento di utentiPlus.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
 
+const utentiPlus = utenti.map(utente => ({
+  ...utente,// ...utente copia tutte le properties originali, poi aggiungiamo descrizione
+  descrizione: `${utente.nome} ${utente.cognome}, ${utente.città}`
+}));//stampiamo il nuovo l'oggetto con il valore della nuova proprietà crata tramite la arrow function nel nuovo array creato da map
+console.log(utentiPlus[0]);
+console.log(utentiPlus[5]);
+console.log(utentiPlus[3]);
+console.log(utentiPlus[4]);
+// { id: 1, nome: "Mario", cognome: "Rossi", ..., descrizione: "Mario Rossi, Milano" }
 console.log(`**************************************************`);
-/* ESERCIZIO 10 — filter attivi
+ /* ESERCIZIO 10 — filter attivi
    Usa filter per ottenere solo gli utenti con attivo: true.
    Stampa l'array risultante.
 */
