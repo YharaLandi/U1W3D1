@@ -153,7 +153,10 @@ console.log(`**************************************************`);
 
 
 const utentiPlus = utenti.map(utente => ({
+   // "utente" è il parametro della funzione di map. Possiamo dire che map passa automaticamente ogni oggetto di utenti alla funzione, e noi lo chiamiamo "utente". Ce ne restituisce uno alla volta perchè gli richiediamo un indice specifico dell'array sul console.log ma "dentro di sè" li ha "letti" tutti e "modificati" tutti 
+
   ...utente,// ...utente copia tutte le properties originali, poi aggiungiamo descrizione
+
   descrizione: `${utente.nome} ${utente.cognome}, ${utente.città}`
 }));//stampiamo il nuovo l'oggetto con il valore della nuova proprietà crata tramite la arrow function nel nuovo array creato da map
 console.log(utentiPlus[0]);
@@ -162,6 +165,8 @@ console.log(utentiPlus[3]);
 console.log(utentiPlus[4]);
 // { id: 1, nome: "Mario", cognome: "Rossi", ..., descrizione: "Mario Rossi, Milano" }
 console.log(`**************************************************`);
+
+
  /* ESERCIZIO 10 — filter attivi
    Usa filter per ottenere solo gli utenti con attivo: true.
    Stampa l'array risultante.
