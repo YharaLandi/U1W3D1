@@ -172,8 +172,13 @@ console.log(`**************************************************`);
    Stampa l'array risultante.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+// similmente ai metodi precedenti filter itera sull'array tutti gli elementi ma restituisce solo quelli i quali soddisfano una certa condizione che gli diamo
+const attivi = utenti.filter(u => u.attivo===true);
+//gli sitamo dicendo, entra dentro utenti, crea un parametro u e dagli la proprietà attivo. se questa proprietà corrisponde a true, allora inseriscino nell'array attivi.
 
+//per esempio qui la condizione per "accogliere" un oggetto nel nuovo array deve essere che la condizione attivo sia true-
+console.log(attivi);
+console.log(`**************************************************`);
 console.log(`**************************************************`);
 /* ESERCIZIO 11 — filter combinato
    Usa filter per ottenere solo gli utenti maggiorenni (eta >= 18) che vivono a Milano.
