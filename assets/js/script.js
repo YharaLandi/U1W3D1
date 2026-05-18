@@ -188,14 +188,18 @@ console.log(`**************************************************`);
 const milanoAdulti = utenti.filter(u => u.eta >= 18 && u.città === "Milano");
 console.log(milanoAdulti);
 console.log(`**************************************************`);
+
+
 /* ESERCIZIO 12 — find
    Usa find per trovare il primo utente con id === 4.
    Stampa l'oggetto.
 */
-
-/* SCRIVI QUI LA TUA RISPOSTA */
-
+// find restituisce il PRIMO elemento che soddisfa la condizione. Non crea nè array nè oggetti. restituisce direttamente l'elemento trovato. Se non trova niente restituisce undefined
+const utente4 = utenti.find(u => u.id === 4);
+console.log(utente4); 
 console.log(`**************************************************`);
+
+
 /* ESERCIZIO 13 — reduce
    a) Usa reduce per calcolare l'età media (somma età / numero utenti). Stampa.
    b) Usa reduce per contare il numero di utenti attivi. Stampa.
