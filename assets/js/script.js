@@ -6,6 +6,12 @@
   - Cerca nei motori di ricerca solo cose non viste a lezione. Tutto il necessario è già stato spiegato stamattina.
 */
 
+/*memo personale 
+destructuring:
+ oggetto → graffe
+ array → parentesi quadre
+*/
+
 const utenti = [
   { id: 1, nome: "Mario",  cognome: "Rossi",   eta: 28, attivo: true,  città: "Milano" },
   { id: 2, nome: "Anna",   cognome: "Bianchi", eta: 35, attivo: false, città: "Roma" },
@@ -114,18 +120,24 @@ console.log(`**************************************************`); //se si fosse
    Stampa tutti gli utenti nel formato "- Nome Cognome (città)".
    Esempio: "- Mario Rossi (Milano)"
 */
-
+//forEach è un metodo degli array. Prende una funzione e la esegue una volta per ogni elemento dell'array, passandogli l'elemento come parametro. È come un for ma prende direttamente OGNI elemento di, in questo caso, utenti. Cosa che dovremmo fare ad uno ad uno con il for.
 utenti.forEach(({ nome, cognome, città }) => {
-  console.log(`- ${nome} ${cognome} (${città})`);
-});
+  console.log(`${nome} ${cognome} vive a ${città}`);
+});//Poi ci aggiungiamo il destructuring che ci permette appunto di "pescare" i valori delle proprietà come ci serve
 console.log(`**************************************************`);
+
+
+
 /* ESERCIZIO 8 — map a stringhe
    Usa map per creare nomiCompleti = ["Mario Rossi", "Anna Bianchi", ...].
    Stampa l'array.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
-
+/*map è simile a forEach, ovvero itera su ogni elemento dell'array. La differenza chiave è:
+forEach: ESEGUE qualcosa per ogni elemento, ma non restituisce niente di nuovo. (in un certo senso come un puzzle di informazioni che usa alcuni pezzi)
+map= esegue qualcosa per ogni elemento e restituisce un array nuovo con i risultati (prende quelle proprietà, le copia e crea un array nuovo con quelle proprietà) ma non modifica l'array originario*/
+const nomiCompleti = utenti.map(({ nome, cognome }) => `${nome} ${cognome}`);
+console.log(nomiCompleti);
 console.log(`**************************************************`);
 /* ESERCIZIO 9 — map a oggetti
    Usa map per creare utentiPlus: array di oggetti dove ogni utente ha tutte
