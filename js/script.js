@@ -39,9 +39,15 @@ console.log(`**************************************************`);
    Estrai 3 properties in 3 variabili usando destructuring.
    Stampa le 3 variabili.
 */
-
-
+const persona = { nome: "Christian", cognome: "Bianchi", eta: 27, città: "Napoli" };//oggetto
+ 
+const { nome, eta, città } = persona;// Le graffe prima di = indicano il destructuring:
+console.log(nome); 
+console.log(eta);
+console.log(città);
 console.log(`**************************************************`);
+//Creiamo una costante con queste 3 proprietà prese dell'oggetto di persona. In un certo senso possiamo dire che la costante {proprietà oggetto} ha valore delle propietà di persona. Quindi se per esempio noi mettessimo cap, sarà undefined perchè cap non è in nessun ogetto di percona
+
 
 /* ESERCIZIO 3 — Destructuring nei parametri
    Scrivi una arrow function "riepilogo" che riceve un utente e ritorna
@@ -49,8 +55,12 @@ console.log(`**************************************************`);
    Chiamala su utenti[0], utenti[1], utenti[2] e stampa i 3 risultati.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
-
+const riepilogo = ({ nome, cognome, eta }) => `${nome} ${cognome} (${eta} anni)`;
+//Normalmente dovrei scrivere utente. ogni volta per interpellare una una proprietà.
+//Con il destructuring nel parametro stiamo facendo la stessa cosa dell'esercizio 2, ma con una arrow, quindi in modo "compresso". Creiamo quindi una const riepilogo che conterrà una arrow func (la sintassi prevede (parametri di una funzione{destructuring con proprietà da interpellare degli oggetti dell'array utenti}) e la arrow con ciò che verrà stampato)
+console.log(riepilogo(utenti[0])); //richiamiamo gli indici
+console.log(riepilogo(utenti[1])); 
+console.log(riepilogo(utenti[2])); 
 console.log(`**************************************************`);
 
 /* ESERCIZIO 4 — Spread su array
